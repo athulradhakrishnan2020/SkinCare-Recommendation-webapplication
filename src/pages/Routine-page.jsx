@@ -8,7 +8,7 @@ import Button from "../components/button";
 function RoutinePage() {
 
     const [selectedProblems, setSelectedProblems] = useState([]);
-    const [selectedSkinType, setSelectedSkinType] = useState([]);
+    const [selectedSkinType, setSelectedSkinType] = useState("");
     const navigate = useNavigate();
 
     //toggle handler for skin problems
@@ -24,30 +24,30 @@ function RoutinePage() {
 
     const toggleSkinType = (title) => {
         setSelectedSkinType(title);
-            
+
     };
 
     const handleSubmit = () => {
-        navigate('/result');
-        console.log('selected problems :',selectedProblems);
-        console.log('selected skin type :',selectedSkinType);
+        console.log('selected problems :', selectedProblems);
+        console.log('selected skin type :', selectedSkinType);
 
+        const skinTypeMap = {
+            "Dry": "type01",
+            "Normal": "type02",
+            "Oily": "type03",
+            "Combination": "type04",
+            "Sensitive": "type05",
+        };
 
-    const skinTypeMap = {
-        "Dry": "type01",
-        "Normal": "type02",
-        "Oily": "type03",
-        "Combination": "type04",
-        "Sensitive": "type05",
-    };
+        const skinTypeId = skinTypeMap[selectedSkinType];
 
-    const skinTypeId = skinTypeMap[selectedSkinType];
-
-    navigate("/result",
-        {state: {selectedProblems: selectedProblems,
-                selectedSkinType: selectedSkinType,
+        navigate("/result",
+            {
+                state: {
+                    selectedProblems: selectedProblems,
+                    selectedSkinType: selectedSkinType,
                 },
-    });
+            });
 
     };
 
