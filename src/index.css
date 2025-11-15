@@ -105,3 +105,24 @@ body {
 
 }
 
+.head-products {
+    
+    color: brown;
+    font-style: italic;
+    font-weight: 300;
+    cursor: pointer;
+
+}
+
+.head-product-detail{
+
+    color: #1e293b;
+    font-weight: 600;
+
+}
+
+.head-product{
+    font-size: larger;
+    font-weight: 800;
+
+}

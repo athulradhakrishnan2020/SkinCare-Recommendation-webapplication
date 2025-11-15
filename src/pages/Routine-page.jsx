@@ -2,8 +2,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SelectionBox from "../components/selection-box";
-import Navbar from "../components/Navbar";
 import Button from "../components/button";
+import Navbar from "../components/Navbar";
+
 
 function RoutinePage() {
 
@@ -54,7 +55,7 @@ function RoutinePage() {
     return (
 
         <>
-    <Navbar />
+        <Navbar />
     <div className="routine-page">
         <h1 className="text-5xl font-bold mb-4 text-white mt-10">Skin Problems</h1>
         <div className="flex flex-wrap justify-center gap-4">
